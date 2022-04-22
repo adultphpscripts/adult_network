@@ -1,0 +1,11 @@
+{
+    "html": {
+        "header": "?>\r\n<header><\/header>\r\n<?",
+        "footer": "?>\r\n<footer>\r\n<\/footer>\r\n<?",
+        "nav": "?>\r\n<nav><\/nav>\r\n<?",
+        "page": "?>\r\n<!DOCTYPE>\r\n<html>\r\n<head>\r\n<title><\/title>\r\n<meta name=\"description\" content=\"\">\r\n<\/head>\r\n<body>\r\n<?= $vars;?>\r\n<\/body>\r\n<\/html>\r\n<?"
+    },
+    "page": {
+        "main": "ob_start();\r\n\r\n$html = new html();\r\n$html->header();\r\n$html->footer();\r\n\r\n$content = ob_get_contents();\r\nob_clean();\r\n$html->page($content);"
+    }
+}
