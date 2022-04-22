@@ -1,0 +1,7 @@
+{
+    "require": {
+        "monolog/monolog": "2.0.*",
+        "geoip/geoip":"~1.16",
+        "google/cloud-translate": "*",
+    }
+}
