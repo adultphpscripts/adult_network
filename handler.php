@@ -73,7 +73,7 @@ class library {
     }
 
     function __destruct() {
-        if (CACHE_ON == true) { 
+        if (self::CACHE_ON == true) { 
             $cache = ob_get_contents();
             ob_end_flush();
             file_put_contents(__DIR__ . '/cache/' . preg_replace("/[^A-Za-z0-9]/", '', $this->url), $cache);
