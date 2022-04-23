@@ -22,6 +22,31 @@ class library {
         return $buffer;   
     }
     
+    function _add($table, $data) {
+        if ($this->db->query("INSERT INTO {$table} (" . implode("," ,array_keys($data)) . ") VALUES ('" . implode("','" ,array_values($data)) . "')")==FALSE) {
+            return FALSE;
+        }else{
+            return $this->db->insert_id;
+        }
+    }
+    
+    function _set($table, $what, $where) {
+        if ($this->db->query("UPDATE {$table} SET $what WHERE $where")==FALSE) {
+            return FALSE;
+        }else{
+            return TRUE;
+        }
+    }
+    
+    function _get($table, $what, $where) {
+        $result = $this->db->query("SELECT * FROM {$table} WHERE $where");
+        if ($result->num_rows == 0) {
+            return FALSE;
+        }else{
+            return $result->fetch_assoc();
+        }
+    }
+    
     function exception_handler($exception) {
         echo 'Error: ' . $exception->getMessage() . ' in '
             . $exception->getFile() . ' on line '
