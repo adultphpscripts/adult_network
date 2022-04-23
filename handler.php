@@ -64,7 +64,7 @@ class library {
     function __construct() {
         set_exception_handler(array($this, "exception_handler"));
         $this->db = new mysqli(MYSQL['host'], MYSQL['username'], MYSQL['password'], MYSQL['database']);
-        if (CACHE_ON == true) { 
+        if (self::CACHE_ON == true) { 
             ob_start(array($this, "tidy"));
         }
         $this->url = 'https://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
