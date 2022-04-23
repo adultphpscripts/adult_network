@@ -96,5 +96,4 @@ if (!isset($_GET["path"])) {
         $class->$method();
     }
 }
-$library->close();
-?>
+
