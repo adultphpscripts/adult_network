@@ -6,6 +6,6 @@
         "page": "extract($vars);\r\n?>\r\n<!DOCTYPE>\r\n<html>\r\n<head>\r\n<meta http-equiv=\"content-type\" content=\"text\/html; charset=UTF-8\">\r\n<meta name=\"description\" content=\"<?=$description;?>\">\r\n<meta name=\"keywords\" content=\"<?=$keyword;?>\">\r\n<meta name=\"author\" content=\"AdultPHPScripts.com\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n<title><?=$title;?><\/title>\r\n<\/head>\r\n<body id=\"body\">\r\n<?= $content;?>\r\n<\/body>\r\n<\/html>\r\n<?"
     },
     "page": {
-        "main": "ob_start();\r\n\r\n$html = new html();\r\n$html->header();\r\n$html->footer();\r\n\r\n$content = ob_get_contents();\r\nob_clean();\r\n$html->page($content);"
+        "main": "ob_start();\r\n\r\n$html = new html();\r\n$html->header();\r\n$html->footer();\r\n\r\n$content = ob_get_contents();\r\nob_clean();\r\n$html->page(['title' => '', 'description' => '', 'content' => $content]);"
     }
 }
